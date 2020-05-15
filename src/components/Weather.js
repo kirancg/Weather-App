@@ -1,5 +1,6 @@
 import React from "react";
 
+//changed to stateless functional component
 const Weather = props => (
 	<div className="weather__info">
 	 {	

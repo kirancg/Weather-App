@@ -8,10 +8,7 @@ import 'weather-icons/css/weather-icons.css';
 const API_KEY = "cb1f26f55636d5d59780ec7804711583";
 
 class App extends React.Component {
-  constructor() {
-    super();
-
-    this.state = {
+    state = {
       temperature: undefined,
       realFeel: undefined,
       city: undefined,
@@ -20,8 +17,7 @@ class App extends React.Component {
       description: undefined,
       error: undefined
     };
-  }
-
+  
   getWeather = async (e) => {
     e.preventDefault();
     const city = e.target.elements.city.value;
