@@ -1,5 +1,6 @@
 import React from 'react';
 //import { Component } from 'react';
+import './App.css';
 import Title from './components/Title';
 import Form from './components/Form';
 import Weather from './components/Weather';
