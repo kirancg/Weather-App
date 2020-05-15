@@ -3,19 +3,25 @@ import React from "react";
 import Titles from "./components/Titles";
 import Form from "./components/Form";
 import Weather from "./components/Weather";
+import 'weather-icons/css/weather-icons.css';
 
 const API_KEY = "cb1f26f55636d5d59780ec7804711583";
 
 class App extends React.Component {
-  state = {
-    temperature: undefined,
-    realFeel: undefined,
-    city: undefined,
-    country: undefined,
-    humidity: undefined,
-    description: undefined,
-    error: undefined
+  constructor() {
+    super();
+
+    this.state = {
+      temperature: undefined,
+      realFeel: undefined,
+      city: undefined,
+      country: undefined,
+      humidity: undefined,
+      description: undefined,
+      error: undefined
+    };
   }
+
   getWeather = async (e) => {
     e.preventDefault();
     const city = e.target.elements.city.value;
@@ -33,6 +39,7 @@ class App extends React.Component {
         description: data.weather[0].description,
         error: ""
       });
+      
     } else {
       this.setState({
         temperature: undefined,
@@ -64,6 +71,7 @@ class App extends React.Component {
                     city={this.state.city}
                     country={this.state.country}
                     description={this.state.description}
+                    weatherIcon = {this.state.icon}
                     error={this.state.error}
                   />
                 </div>
